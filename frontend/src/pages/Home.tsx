@@ -13,7 +13,6 @@ const Home = () => {
 
  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 
-
   const { workouts, dispatch, isModalOpen, workoutToEdit } = useWorkoutsContext();
   const [loading, setLoading] = useState(true);
 

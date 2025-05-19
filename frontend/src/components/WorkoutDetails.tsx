@@ -13,7 +13,7 @@ const WorkoutDetails = ({ workout }: { workout: any }) => {
   const handleClick = async() => {
     const confirmed = confirm('Are you sure you want to remove ' + workout.title.toUpperCase() + ' workout?');
     if (confirmed) {
-      const response = await fetch(`${apiUrl}/api/workouts` + workout._id, {
+      const response = await fetch(`${apiUrl}/api/workouts/` + workout._id, {
         method: 'DELETE'
       });
       const json = await response.json();

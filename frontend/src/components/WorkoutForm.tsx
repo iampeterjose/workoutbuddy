@@ -34,7 +34,7 @@ const WorkoutForm = () => {
         const workoutData = { title, load, reps };
 
         const method = workoutToEdit ? 'PATCH' : 'POST';
-        const url = workoutToEdit ? `${apiUrl}/api/workouts/${workoutToEdit._id}` : '/api/workouts';
+        const url = workoutToEdit ? `${apiUrl}/api/workouts/${workoutToEdit._id}` : `${apiUrl}/api/workouts`;
 
         const response = await fetch(url, {
             method: method,
