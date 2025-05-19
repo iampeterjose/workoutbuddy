@@ -11,12 +11,15 @@ import WorkoutFormModal from '../components/WorkoutFormModal';
 
 const Home = () => {
 
+ const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+
+
   const { workouts, dispatch, isModalOpen, workoutToEdit } = useWorkoutsContext();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts');
+      const response = await fetch(`${apiUrl}/api/workouts`);
       const json = await response.json();
 
       if (response.ok) {

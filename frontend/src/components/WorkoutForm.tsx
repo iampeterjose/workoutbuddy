@@ -4,6 +4,8 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
 
 const WorkoutForm = () => {
 
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+
     const { dispatch, workoutToEdit } = useWorkoutsContext();
     // State variables for form inputs
     const [title, setTitle] = useState('');
@@ -32,7 +34,7 @@ const WorkoutForm = () => {
         const workoutData = { title, load, reps };
 
         const method = workoutToEdit ? 'PATCH' : 'POST';
-        const url = workoutToEdit ? `/api/workouts/${workoutToEdit._id}` : '/api/workouts';
+        const url = workoutToEdit ? `${apiUrl}/api/workouts/${workoutToEdit._id}` : '/api/workouts';
 
         const response = await fetch(url, {
             method: method,

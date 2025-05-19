@@ -6,12 +6,14 @@ import { formatDistanceToNow } from 'date-fns/formatDistanceToNow';
 
 const WorkoutDetails = ({ workout }: { workout: any }) => {
 
+  const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+
   const { dispatch } = useWorkoutsContext();
 
   const handleClick = async() => {
     const confirmed = confirm('Are you sure you want to remove ' + workout.title.toUpperCase() + ' workout?');
     if (confirmed) {
-      const response = await fetch('/api/workouts/' + workout._id, {
+      const response = await fetch(`${apiUrl}/api/workouts` + workout._id, {
         method: 'DELETE'
       });
       const json = await response.json();
