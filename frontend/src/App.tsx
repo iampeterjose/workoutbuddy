@@ -7,7 +7,7 @@ function App() {
     <div className="text-gray-700">
       <BrowserRouter>
         <Navbar />
-        <div className="bg-gray-100 min-h-screen md:px-30 px-3 py-5">
+        <div className="bg-gradient-to-br from-teal-50 to-white min-h-screen md:px-30 px-3 py-5">
           <Routes>
             <Route 
               path="/"
